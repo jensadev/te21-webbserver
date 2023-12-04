@@ -72,7 +72,7 @@ Med templater så kan vi lättare sammanfoga data med html.
 - npm i nunjucks
 - mkdir views
 - rm public/index.html
-- Open index.js
+- Redigera server.js
 
 ```javascript
 const nunjucks = require('nunjucks');
@@ -84,6 +84,20 @@ nunjucks.configure('views', {
     express: app
 });
 ...
+```
+
+- Skapa och redigera views/index.njk
+
+```html
+<h1>{title}</h1>
+```
+
+- Redigera server.js
+
+```javascript
+app.get("/", (req, res) => {
+  res.render('index.njk', { title: 'Hello from template' })
+})
 ```
 
 ### Bättre struktur med route filer
