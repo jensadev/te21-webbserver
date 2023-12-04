@@ -183,3 +183,42 @@ router.get("/about", function (req, res) {
 ```
 
 - Surfa till localhost:3000/about
+
+### GET parametrar
+
+Vi kan skicka med data i urlen som vi kan använda på servern. Detta kan vara användbart för att filtrera data eller hämta specifik data.
+
+- Skapa en ny route i routes/index.js
+
+```javascript
+router.get("/user/:id", function (req, res) {
+  res.send(`User id: ${req.params.id}`)
+})
+```
+
+- Surfa till localhost:3000/user/1
+- Surfa till localhost:3000/user/jkf32fjkwjf0szeif9sef
+
+- Med den möjligheten, ser du några eventuella säkerhetsrisker?
+
+### Query parametrar
+
+Vi kan också skicka med data i urlen som vi kan använda på servern. Detta kan vara användbart för att filtrera data eller hämta specifik data.
+
+- Skapa en ny route i routes/index.js
+
+```javascript
+router.get("/search", function (req, res) {
+  res.send(`Search query: ${req.query.q}`)
+})
+```
+
+- Surfa till localhost:3000/search?q=hello
+- Surfa till localhost:3000/search?q=hello+world
+
+- Med den möjligheten, ser du några eventuella säkerhetsrisker?
+
+## POST
+
+POST requests används för att skicka data till servern. Det kan vara formulär, json, filer osv.
+
