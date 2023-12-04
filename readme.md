@@ -2,17 +2,19 @@
 
 https://expressjs.com/
 
-Bygga en monolit.
+Bygga en, monolit.
 
 ## Hello world
 
 - Start terminal, wsl
 - Make sure nvm is installed
+- cd code
 - mkdir te21-webbserver
+- cd te21-webbserver
 - npm init -y
 - npm i express
 - touch server.js
-- edit package.json
+- redigera filen package.json
     
 ```json
 "scripts": {
@@ -20,7 +22,7 @@ Bygga en monolit.
   },
 ```
     
-- edit index.js
+- edit server.js
 
 ```javascript
 const express = require("express")
