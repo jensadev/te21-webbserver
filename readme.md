@@ -231,6 +231,14 @@ router.get("/search", function (req, res) {
 - Surfa till localhost:3000/search?q=<script>alert("hello")</script>
 - Surfa till localhost:3000/search?q=<script>alert(document.cookie)</script>
 
+- Med den möjligheten, ser du några eventuella säkerhetsrisker?
+
+### Säkerhet
+
+Två sätt att hantera säkerhet, validering och sanitizing.
+
+- Validering, kolla att det är rätt typ av data, att det är rätt längd osv.
+- Sanitizing, ta bort skadlig kod, ta bort html, ta bort javascript osv.
 
 ## POST
 
