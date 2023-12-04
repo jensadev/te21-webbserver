@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+
+.container {
+  width: min(80ch, 100vh - 4rem);
+  margin-inline: auto;
+}
+
+.region {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

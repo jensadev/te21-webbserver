@@ -1,15 +1,18 @@
 {
   "name": "te21-webbserver",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "node index.js"
+    "dev": "nodemon -e js,html,njk ./server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }

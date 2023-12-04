@@ -1,13 +1,20 @@
 const express = require('express')
+const nunjucks = require('nunjucks')
+
+const indexRouter = require('./routes/index')
+
 const app = express()
+
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app,
+})
 
 const port = process.env.PORT || 3000
 
 app.use(express.static('public'))
 
-app.get('/hello', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/', indexRouter)
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
