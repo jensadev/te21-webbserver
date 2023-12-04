@@ -218,7 +218,15 @@ router.get("/search", function (req, res) {
 
 - Med den möjligheten, ser du några eventuella säkerhetsrisker?
 
-## POST
+### Säkerhet
 
-POST requests används för att skicka data till servern. Det kan vara formulär, json, filer osv.
+- Skapa en ny route i routes/index.js
 
+```javascript
+router.get("/search", function (req, res) {
+  res.send(`Search query: ${req.query.q}`)
+})
+```
+
+- Surfa till localhost:3000/search?q=<script>alert("hello")</script>
+- Surfa till localhost:3000/search?q=<script>alert(document.cookie)</script>
