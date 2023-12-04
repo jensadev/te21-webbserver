@@ -230,3 +230,59 @@ router.get("/search", function (req, res) {
 
 - Surfa till localhost:3000/search?q=<script>alert("hello")</script>
 - Surfa till localhost:3000/search?q=<script>alert(document.cookie)</script>
+
+
+## POST
+
+POST requests används för att skicka data till servern. Det kan vara formulär, json, filer osv.
+
+För att kunna läsa av data som skickas med en POST request så måste vi använda oss av ett middleware som heter body-parser.
+
+- npm i body-parser
+
+
+server.js
+```javascript
+const bodyParser = require('body-parser')
+...
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+```
+
+- Vi ska nu skicka formulärdata till servern.
+- Redigera routes/index.js
+
+```html
+  <form action="/hello" method="POST">
+    <label for="name">Enter your name: </label>
+    <input type="text" id="name" name="name" autofocus>
+    <button type="submit">Submit</button>
+  </form>
+```
+
+- Skapa en ny *POST* route i routes/index.js
+
+```javascript
+router.post('/hello', function (req, res) {
+  console.log(req.body)
+  res.send(`Hello ${req.body.name}`)
+})
+```
+
+- Surfa till localhost:3000/ och skicka formuläret
+- Vad händer om du skickar formuläret igen?
+- Vad händer om du laddar om /hello efter att ha skickat formuläret?
+
+-Säkerhet?
+
+- Gör om POST routen så att den skriver ut data med en template istället för att skicka tillbaka text. 
+  - Skapa en ny vy i views/hello.njk
+  - Använd dig av templating för att skriva ut namnet som skickas med formuläret.
+  - Skicka tillbaka vyn istället för text.
+
+## Uppgift
+
+Miniräknare eller något annat fantastiskt kul!
+Gör en ny routes fil, kalla den calc.
+Skapa en GET route som renderar en vy med ett formulär.
+Skapa en POST route som tar emot data från formuläret och skickar tillbaka en vy med resultatet.
