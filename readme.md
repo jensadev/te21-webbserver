@@ -158,3 +158,28 @@ För att underlätta utvecklingen så kan vi använda oss av nodemon som startar
 - npm i -D nodemon
 - edit package.json
 - "dev": "nodemon -e js,html,njk ./server.js"
+
+## GET
+
+Allt hittils är GET requests. Din klient skickar en request till en url på servern, servern svarar med filer och data.
+
+- Skapa en ny route i routes/index.js
+
+```javascript
+router.get("/about", function (req, res) {
+  res.render('about.njk', { title: 'About' })
+})
+```
+
+- Skapa en ny vy i views/about.njk
+
+```html
+{% extends "layout.njk" %}
+{% block content %}
+<main>
+    <h1>{{ title }}</h1>
+</main>
+{% endblock %}
+```
+
+- Surfa till localhost:3000/about
