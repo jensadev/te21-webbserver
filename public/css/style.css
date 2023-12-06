@@ -12,3 +12,13 @@ body {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.nav .active {
+  font-weight: bold;
+}
