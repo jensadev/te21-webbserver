@@ -16,6 +16,10 @@ app.use(express.static('public'))
 
 app.use('/', indexRouter)
 
+// app.get('/about', (req, res) => {
+//   res.render('about.html')
+// })
+
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`)
+  console.log(`Server running on http://localhost:${port}`)
 })
