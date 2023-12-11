@@ -12,3 +12,54 @@ body {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  font-weight: bold;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero {
+  display: grid;
+  grid-template-areas: 'stack';
+}
+
+.hero > * {
+  grid-area: stack;
+  color: white;
+}
+
+.grid {
+  --gutter: 1rem;
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
+  gap: var(--gutter, var(--space-s-l));
+}
+
+.grid[data-layout='50-50'] {
+  --grid-placement: auto-fit;
+  --grid-min-item-size: clamp(16rem, 50vw, 22rem);
+}

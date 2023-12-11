@@ -14,11 +14,12 @@ const port = process.env.PORT || 3000
 
 app.use(express.static('public'))
 
-app.use('/', indexRouter)
+app.use((req, res, next) => {
+  res.locals.url = req.originalUrl
+  next()
+})
 
-// app.get('/about', (req, res) => {
-//   res.render('about.html')
-// })
+app.use('/', indexRouter)
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
