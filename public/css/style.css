@@ -47,6 +47,8 @@ img {
 .hero > * {
   grid-area: stack;
   color: white;
+  display: grid;
+  place-content: center;
 }
 
 .grid {
@@ -62,4 +64,13 @@ img {
 .grid[data-layout='50-50'] {
   --grid-placement: auto-fit;
   --grid-min-item-size: clamp(16rem, 50vw, 22rem);
+}
+
+.bleed {
+  position: relative;
+  width: 98vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -49vw;
+  margin-right: -49vw;
 }
